@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request
+from dotenv import load_dotenv
 import requests
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
-
-API_KEY = "d46cf340288b2b705f6b5883a4e0e08e"
+API_KEY = os.getenv("API_KEY")
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 DEMO_DATA = {
